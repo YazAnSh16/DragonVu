@@ -35,6 +35,12 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "Questions");
+    await DataSeeder.SeedGeneralChapter(context, rootPath);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

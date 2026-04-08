@@ -17,8 +17,9 @@ namespace DragonVu.Models
         // السنة (1 أو 2 حالياً)
 
         public int Year { get; set; }
-        [ValidateNever]
-        public ICollection<Question> questions { get; set; }
+        //[ValidateNever]
+
+        //public ICollection<Question> questions { get; set; }
         [ValidateNever]
         public ICollection<Result> results { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

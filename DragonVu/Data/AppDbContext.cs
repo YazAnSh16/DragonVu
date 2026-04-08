@@ -20,6 +20,8 @@ namespace DragonVu.Data
 
         public DbSet<Subject> subjects { get; set; }
 
+        public DbSet<Chapter> chapters { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

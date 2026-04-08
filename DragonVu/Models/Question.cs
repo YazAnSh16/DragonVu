@@ -9,9 +9,18 @@ namespace DragonVu.Models
         [Key]
         public int Id { get; set; }
 
+
+        //leave it for now, we will add it later
         public int SubjectId { get; set; }
         [ValidateNever]
         public Subject Subject { get; set; } = null!;
+
+        //make it required later, for now we will add it later
+        public int? ChapterId { get; set; }
+
+        [ValidateNever]
+        public Chapter? Chapter { get; set; }/* = null!;*/
+
         // رابط صورة السؤال
 
         [ValidateNever]
@@ -30,7 +39,7 @@ namespace DragonVu.Models
         public string? AnswerD { get; set; } = null;
         //
 
-        public string Hint { get; set; } = null!;
+        public string? Hint { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
